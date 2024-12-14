@@ -12,7 +12,6 @@ void Reset() {
         cout << "Do you want to play again? (y/n): ";
         cin >> playAgain;
 
-        // Validate input
         if (playAgain == 'y' || playAgain == 'Y') {
             int mode;
             while (true) {
@@ -31,9 +30,8 @@ void Reset() {
                     cout << "Invalid choice. Please enter 1 for Regular or 2 for Battle.\n";
                 }
             }
-            break; // Exit "play again" loop after starting a game
+            break;
         } else if (playAgain == 'n' || playAgain == 'N') {
-            // Call the function to write the game report
             writeGameReport();
             cout << "\nThanks for Playing!!!!";
             cout << "\nBye Bye!!!!\n";

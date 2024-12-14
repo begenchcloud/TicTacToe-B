@@ -11,7 +11,7 @@ extern char square[10];
 extern Archetype* playerXArchetype;
 extern Archetype* playerOArchetype;
 
-// New global variables for win information
+
 extern string winCondition;
 extern string winSquares;
 extern int gamesPlayed;
@@ -19,7 +19,7 @@ extern int playerOneWins;
 extern int playerTwoWins;
 extern int ties;
 
-// Function prototypes
+
 void display();
 void Reset();
 int checkWin();

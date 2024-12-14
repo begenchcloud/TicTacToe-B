@@ -23,12 +23,12 @@ void chooseArchetype(Archetype*& archetype, const string& playerName) {
 
     while (true) {
         cout << "Enter your choice (1 or 2): ";
-        if (!(cin >> choice) || (choice != 1 && choice != 2)) { // Input validation
-            cin.clear(); // Clear the input stream
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore invalid input
+        if (!(cin >> choice) || (choice != 1 && choice != 2)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid input. Please enter 1 or 2.\n";
         } else {
-            break; // Exit loop if input is valid
+            break;
         }
     }
 
@@ -62,9 +62,9 @@ int main() {
         cout << "\nChoose game mode:\n1. Regular\n2. Battle\n3. Exit\nYour choice: ";
         int mode;
 
-        while (!(cin >> mode) || mode < 1 || mode > 3) { // Input validation
-            cin.clear(); // Clear the input stream
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore invalid input
+        while (!(cin >> mode) || mode < 1 || mode > 3) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid choice. Please enter a number between 1 and 3: ";
         }
 

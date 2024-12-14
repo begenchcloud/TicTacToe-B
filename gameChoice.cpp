@@ -18,22 +18,20 @@ void gameChoice(bool isTwoPlayer, bool isBattle) {
         int choice;
         do {
     cout << "Enter 0 for a special move, or 1-9 to make a regular move: ";
-    if (!(cin >> choice) || choice < 0 || choice > 9) { // Input validation
-        cin.clear(); // Clear the input stream
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore invalid input
+    if (!(cin >> choice) || choice < 0 || choice > 9) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input. Please enter a number between 0 and 9.\n";
         continue;
     }
 
     if (choice == 0 && isBattle && currentArchetype && currentArchetype->specialMove(square)) {
-        // Perform special move
         display();
-        break; // Exit input loop after successful special move
+        break;
     } else if (choice >= 1 && choice <= 9 && square[choice] == '0' + choice) {
-        // Perform regular move
         square[choice] = xo;
         display();
-        break; // Exit input loop after successful regular move
+        break;
     } else {
         cout << "Invalid move. Try again.\n";
     }

@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-// Define global variables for win conditions
 string winCondition;
 string winSquares;
 
