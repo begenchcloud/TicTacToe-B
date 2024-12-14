@@ -1,4 +1,6 @@
 #include "game.hpp"
+#include <iostream>
+using namespace std;
 
 void Reset() {
     for (int i = 1; i <= 9; i++) {
@@ -6,25 +8,40 @@ void Reset() {
     }
 
     char playAgain;
-    cout << "Do you want to play again? (y/n): ";
-    playAgain = _getch();
+    while (true) {
+        cout << "Do you want to play again? (y/n): ";
+        cin >> playAgain;
 
-    if (playAgain == 'y' || playAgain == 'Y') {
-        display();
+        // Validate input
+        if (playAgain == 'y' || playAgain == 'Y') {
+            int mode;
+            while (true) {
+                cout << "\nChoose game mode:\n1. Regular\n2. Battle\nYour choice: ";
+                cin >> mode;
 
-        char mode;
-        cout << "Choose game mode:\n";
-        cout << "1. Two Player\n";
-        cout << "Enter 1 to play or 2 to exit: ";
-        mode = _getch();
-
-        if (mode == '1') {
-            gameChoice(true);
+                if (mode == 1) {
+                    gameChoice(true, false);
+                    break;
+                } else if (mode == 2) {
+                    chooseArchetype(playerXArchetype, "Player X");
+                    chooseArchetype(playerOArchetype, "Player O");
+                    gameChoice(true, true);
+                    break;
+                } else {
+                    cout << "Invalid choice. Please enter 1 for Regular or 2 for Battle.\n";
+                }
+            }
+            break; // Exit "play again" loop after starting a game
+        } else if (playAgain == 'n' || playAgain == 'N') {
+            // Call the function to write the game report
+            writeGameReport();
+            cout << "\nThanks for Playing!!!!";
+            cout << "\nBye Bye!!!!\n";
+            exit(0);
         } else {
-            cout << "Invalid choice. Exiting game.\n";
+            cout << "Invalid input. Please enter 'y' for yes or 'n' for no.\n";
         }
-    } else {
-        cout << "\nThanks for Playing!!!!";
-        cout << "\nBye Bye!!!!";
     }
 }
+
+

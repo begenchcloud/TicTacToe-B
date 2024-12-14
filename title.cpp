@@ -1,4 +1,6 @@
 #include "game.hpp"
+#include <iostream>
+using namespace std;
 
 void title() {
     cout << "*********************************************\n";

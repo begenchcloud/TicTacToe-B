@@ -1,4 +1,10 @@
 #include "game.hpp"
+#include <string>
+using namespace std;
+
+// Define global variables for win conditions
+string winCondition;
+string winSquares;
 
 int checkWin() {
     if (square[1] == square[2] && square[2] == square[3]) {

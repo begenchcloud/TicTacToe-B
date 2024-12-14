@@ -1,4 +1,7 @@
 #include "game.hpp"
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
 void display() {
     cout << "\n";

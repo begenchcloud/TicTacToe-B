@@ -1,23 +1,31 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include <iostream>
-#include <iomanip>
-#include <conio.h>
+#include <string>
+#include <limits>
+#include "archetypes.hpp"
 using namespace std;
 
-
+extern string playerXName, playerOName;
 extern char square[10];
+extern Archetype* playerXArchetype;
+extern Archetype* playerOArchetype;
+
+// New global variables for win information
 extern string winCondition;
 extern string winSquares;
-extern string playerXName;
-extern string playerOName;
+extern int gamesPlayed;
+extern int playerOneWins;
+extern int playerTwoWins;
+extern int ties;
 
-
+// Function prototypes
 void display();
-void gameChoice(bool isTwoPlayer);
-void title();
-int checkWin();
 void Reset();
+int checkWin();
+void gameChoice(bool isTwoPlayer, bool isBattle);
+void chooseArchetype(Archetype*& archetype, const string& playerName);
+void writeGameReport();
 
-#endif // GAME_HPP
+
+#endif
